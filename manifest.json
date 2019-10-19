@@ -1,0 +1,50 @@
+{
+
+  "manifest_version": 2,
+  "name": "Push to reMarkable",
+  "version": "1.0",
+  "applications": {
+    "gecko": {
+      "id": "me@trebaruna.com"
+    }
+  },
+  "description": "Pushes the current page to remarkable",
+  
+  "permissions": [
+    "activeTab",
+    "storage",
+    "webRequest",
+    "*://my.remarkable.com/*",
+    "https://*/document-storage/json/2/upload/request",
+    "https://storage.googleapis.com/*",
+    "downloads"
+  ],
+
+  "icons": {
+    "48": "icons/push-to-remarkable.png"
+  },
+
+  "browser_action": {
+    "default_icon": "icons/push-to-remarkable.png",
+    "default_title": "Push to to remarkable",
+    "default_popup": "popup/push.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [ "http://*/*", "https://*/*"],
+      "js": [
+        "js/jquery-3.4.1.js", 
+        "js/readability.js", 
+        "js/html2canvas.js", 
+        "js/js-pdf-1.5.3.js", 
+        "js/jszip.js", 
+        "js/remarkable-client.js", 
+        "js/jspdf-raleway-normal.js"] 
+    }
+  ],
+
+  "background": { 
+    "scripts": ["background.js"] 
+  }
+}
