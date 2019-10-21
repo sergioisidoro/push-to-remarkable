@@ -123,8 +123,6 @@ var remarkableClient = function (token) {
             zip.generateAsync({type: 'blob'}).then(function(blob) {
                 console.log("Uploading");
                 console.log("Uploading doc  " + doc_object.ID);
-                console.log(doc_object);
-                console.log(doc_object.BlobURLPut)
         
                 $.ajax({
                     type: 'PUT',
@@ -133,9 +131,7 @@ var remarkableClient = function (token) {
                     processData: false,
                     contentType: false,
                     beforeSend: function (xhr) {
-                        console.log(self.token)
                         if (self.token) {
-                            console.log("Setting token");
                             xhr.setRequestHeader("Content-Type", "");
                             xhr.setRequestHeader("Authorization", 
                                 "Bearer " + self.token);

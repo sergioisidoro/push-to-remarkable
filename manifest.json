@@ -37,10 +37,8 @@
         "js/jquery-3.4.1.js", 
         "js/readability.js", 
         "js/html2canvas.js", 
-        "js/js-pdf-1.5.3.js", 
         "js/jszip.js", 
-        "js/remarkable-client.js", 
-        "js/jspdf-raleway-normal.js"] 
+        "js/remarkable-client.js"] 
     }
   ],
 
